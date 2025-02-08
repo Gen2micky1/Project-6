@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Micheal Olowofela">
+        <meta name="description" content="Order Summary Component">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Order Summary Component</title>
+        <link rel="icon" href="./images/favicon-32x32.png" type="image/x-icon">
+        <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <article class="order-summary">
+        <section class="order-summary__hero">
+            <figure>
+                <img src="./images/illustration-hero.svg" alt="illustration-hero" width="450px" height="220px" loading="lazy">
+                <figcaption class="offscreen">illustration-hero</figcaption>
+            </figure>
+        </section>
+
+        <section class="order-summary__content">
+            <section class="order-summary__text-content">
+                <h1 class="text-content__title">Order Summary</h1>
+
+                <p class="text-content__description center">You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
+            </section>
+
+            <section class="order-summary__plan">
+                <section class="plan__content">
+                    <div class="plan__content-icon">
+                        <figure>
+                            <img src="./images/icon-music.svg" alt="icon-music" width="48px" height="48px" loading="lazy">
+                            <figcaption class="offscreen">icon-music</figcaption>
+                        </figure>    
+                    </div>
+
+                    <div class="plan__content-text">
+                        <p class="annual-plan">Annual Plan</p>
+                        <p class="annual-cost">&dollar;59.99/year</p>
+                    </div>
+                </section>
+                <button
+                onclick="changePlan()"  class="plan__change">Change</button>
+            </section>
+
+            <section class="order-summary__buttons">
+                <button
+                onclick="addPayment()" class="order-summary__button order-summary__button--primary center nowrap">Proceed to Payment</button>
+
+                <button
+                onclick="cancelPayment()"  class="order-summary__button order-summary__button--secondary center nowrap">Cancel Order</button>
+            </section>
+        </section>
+    </article>
+    
+</body>
+</html>

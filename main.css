@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+/* || REST */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* || VARIABLES */
+:root {
+  /* COLORS */
+  --BODY-BG: #E0E8FF;
+  --CARD-BG: #FFFFFF;
+  --HEADING: #1F2E55;
+  --BODY-TEXT: #717FA6;
+  --PLAN-CARD: #F7F9FF;
+  --CHANGE-TEXT: #382AE1;
+  --PRIMARY-BTN-BG: #382AE1;
+  --PRIMARY-BTN-TEXT: #FFFFFF;
+  --SECONDARY-BTN-TEXT: #717FA6;
+  --BTN-HOVER: #766CF1;
+  --BTN-CANCEL-HOVER: #1F2E55;
+
+  /* SHADOWS */
+  --PRIMARY-BTN-SHADOW: 0px 20px 20px 0px hsla(245, 75%, 52%, 0.1903);
+  --BODY-SHADOW: 0px 40px 40px -20px hsla(228, 87%, 40%, 0.1518);
+
+  /* TYPOGRAPHY  */
+  --FF: "Red Hat Display", serif;
+
+  /* TEXT PRESET */
+  /* MOBILE */
+  --HEADER-MOB: 900 1.375rem var(--FF);
+  --BODY-MOB: 500 .9375rem/1.5625rem var(--FF);
+  --PLAN-MOB: 500 .875rem var(--FF);
+  --PLAN-BOLD-MOB: 900 .875rem var(--FF); 
+  --PLAN-CHANGE-MOB: 900 .8125rem var(--FF); 
+  
+  /* DESKTOP */
+  --HEADER: 900 1.75rem var(--FF);
+  --BODY: normal 1rem/1.625rem var(--FF);
+  --PLAN: normal 1rem var(--FF);
+  --PLAN-BOLD: 900 1rem var(--FF); 
+  --PLAN-CHANGE: 900 .875rem var(--FF); 
+  --BUTTON: 900 .9375rem var(--FF); 
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.center {
+  text-align: center;
+}
+
+.responsive-image {
+  display: none;
+}
+
+/* MOBILE FIRST DESIGN */
+/* || GENERAL STYLES */
+html {
+  scroll-behavior: smooth;
+  font: 1rem;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  display: grid;
+  place-content: center;
+  background-color: var(--BODY-BG);
+  background-image: url("./images/pattern-background-mobile.svg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100% 27.36%;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+/* CARD */
+.order-summary {
+    max-width: 327px;
+    min-height: 567px;
+    background-color: var(--CARD-BG);
+    border-radius: 1.25rem;
+    margin: 4.4375rem 1.5rem;
+    box-shadow: var(--BODY-SHADOW);
+    overflow: hidden;
+}
+
+/* CARD HERO IMAGE */
+.order-summary__hero {
+    width: 100%;
+    height: 160px;
+    margin-bottom: 2rem;
+}
+
+.order-summary__hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CARD CONTENT */
+.order-summary__content {
+    
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 0 1.5rem 2rem 1.5rem;
+}
+
+/* CARD TEXT CONTENT */
+.order-summary__text-content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.text-content__title {
+    font: var(--HEADER-MOB);
+    color: var(--HEADING);
+}
+
+.text-content__description {
+    width: 263px;
+    font: var(--BODY-MOB);
+    color: var(--BODY-TEXT);
+}
+
+/* CARD PLAN */
+.order-summary__plan {
+    width: 100%;
+    height: 81px;
+    padding: 1.0625rem 1rem 1rem 1rem;
+    background-color: var(--PLAN-CARD);
+    border-radius: .6875rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plan__content {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+/* CARD PLAN ICON */
+.plan__content-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.plan__content-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CARD PLAN TEXT */
+.plan__content-text {
+    width: 81px;
+    height: 40px;
+}
+
+.annual-plan {
+    font: var(--PLAN-BOLD-MOB);
+    color: var(--HEADING);
+    margin-bottom: .1875rem;
+}
+
+.annual-cost {
+    font: var(--PLAN-MOB);
+    color: var(--BODY-TEXT);
+}
+
+/* CARD PLAN BUTTON */
+button {
+    border: none;
+    outline: none;
+}
+
+.plan__change {
+    font: var(--PLAN-CHANGE-MOB);
+    color: var(--CHANGE-TEXT);
+    text-underline-offset: 2px;
+    text-decoration: underline ;
+    background-color: #ffffff00;
+}
+
+/* ORDER BUTTON */
+.order-summary__buttons {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    gap: 1.5rem;
+}
+
+.order-summary__button {
+    font: var(--BUTTON);
+}
+
+.order-summary__button--primary {
+    border-radius: .6875rem;
+    background-color: var(--PRIMARY-BTN-BG);
+    padding: .9375rem 4rem;
+    color: var(--PRIMARY-BTN-TEXT);
+    box-shadow: var(--PRIMARY-BTN-SHADOW);
+}
+
+.order-summary__button--secondary {
+    background-color: #ffffff00;
+    color: var(--SECONDARY-BTN-TEXT);
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+    body {
+        background-image: url("./images/pattern-background-desktop.svg");
+        background-size: 100% 48.55%;
+    }
+
+    /* CARD */
+    .order-summary {
+        max-width: 450px;
+        min-height: 697px;
+        margin: 6.375rem ;
+    }
+
+    /* CARD HERO IMAGE */
+    .order-summary__hero {
+        width: 100%;
+        height: 220px;
+        margin-bottom: 2.8125rem;
+    }
+
+    /* CARD CONTENT */
+    .order-summary__content {
+        gap: 0rem;
+        margin: 0 3rem 3rem 3rem;
+    }
+
+    /* CARD TEXT CONTENT */
+    .order-summary__text-content {
+        gap: 1.0625rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .text-content__title {
+        font: var(--HEADER);
+    }
+
+    .text-content__description {
+        width: 354px;
+        font: var(--BODY);
+    }
+
+    /* CARD PLAN */
+    .order-summary__plan {
+        height: 98px;
+        padding: 1.5625rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    /* CARD PLAN TEXT */
+    .plan__content-text {
+        width: 92px;
+        height: 48px;
+    }
+
+    .annual-plan {
+        font: var(--PLAN-BOLD);
+        margin-bottom: .375rem;
+    }
+
+    .annual-cost {
+        font: var(--PLAN);
+    }
+
+    .plan__change {
+        font: var(--PLAN-CHANGE);
+    }
+
+    
+    /* ORDER BUTTON */
+    .order-summary__buttons {
+        gap: 2rem;
+    }
+
+    .order-summary__button--primary {
+        padding: .9375rem 6.375rem;
+    }
+
+}
+
+/* DESKTOP */
+@media screen and (min-width: 992px) {
+    .plan__change:hover, 
+    .plan__change:focus-visible {
+        color: var(--BTN-HOVER);
+        text-decoration: none ;
+    }
+
+    .order-summary__button--primary:hover, 
+    .order-summary__button--primary:focus-visible {
+        background-color: var(--BTN-HOVER);
+    }
+    
+    .order-summary__button--secondary:hover,
+    .order-summary__button--secondary:focus-visible {
+        color: var(--BTN-CANCEL-HOVER);
+    }
+}
